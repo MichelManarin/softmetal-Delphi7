@@ -1,0 +1,295 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B625A302-5897-4F12-B753-D230E5913FA5}</ProjectGuid>
+        <MainSource>SOFTMETAL.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Application</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>14.3</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_F>false</DCC_F>
+        <DCC_UsePackage>vcl;rtl;vclx;indy;inet;xmlrtl;vclie;inetdbbde;inetdbxpress;dbrtl;dsnap;dsnapcon;vcldb;soaprtl;VclSmp;dbexpress;dbxcds;inetdb;bdertl;vcldbx;webdsnap;websnap;adortl;ibxpress;teeui;teedb;tee;dss;visualclx;visualdbclx;vclactnband;vclshlctrls;IntrawebDB_50_70;Intraweb_50_70;Rave50CLX;Rave50VCL;dclOfficeXP;RaizeComponentsVcl;RaizeComponentsVclDb;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_Locale>1046</VerInfo_Locale>
+        <DCC_E>false</DCC_E>
+        <DCC_SymbolReferenceInfo>1</DCC_SymbolReferenceInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_S>false</DCC_S>
+        <DCC_N>true</DCC_N>
+        <DCC_K>false</DCC_K>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;$(DCC_Namespace)</DCC_Namespace>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <Icon_MainIcon>SOFTMETAL_Icon.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Icon_MainIcon>SOFTMETAL_Icon.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_DebugInformation>false</DCC_DebugInformation>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="..\Objetos\UObjetoINI.pas">
+            <Form>FrmObjetoINI</Form>
+        </DCCReference>
+        <DCCReference Include="..\Objetos\UObjetoCAD.pas">
+            <Form>FrmObjetoCAD</Form>
+        </DCCReference>
+        <DCCReference Include="..\Configuração\UConfigura.pas">
+            <Form>FrmConfigura</Form>
+        </DCCReference>
+        <DCCReference Include="..\Menu\UMenu.pas">
+            <Form>FrmMenu</Form>
+        </DCCReference>
+        <DCCReference Include="..\Cadastros\U_CadFornecedor.pas">
+            <Form>FrmCadForn</Form>
+        </DCCReference>
+        <DCCReference Include="..\DM\UDM.pas">
+            <Form>DM</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\Cadastros\U_CadFuncionario.pas">
+            <Form>FrmCadFun</Form>
+        </DCCReference>
+        <DCCReference Include="..\Cadastros\U_CadClientes.pas">
+            <Form>FrmCadClien</Form>
+        </DCCReference>
+        <DCCReference Include="..\Cadastros\U_CadBairro.pas">
+            <Form>FrmCadBairros</Form>
+        </DCCReference>
+        <DCCReference Include="..\Cadastros\U_CadCidade.pas">
+            <Form>FrmCadCidades</Form>
+        </DCCReference>
+        <DCCReference Include="..\Cadastros\U_CadCep.pas">
+            <Form>FrmCadCep</Form>
+        </DCCReference>
+        <DCCReference Include="..\Cadastros\U_CadCargo.pas">
+            <Form>FrmCadCargos</Form>
+        </DCCReference>
+        <DCCReference Include="..\Cadastros\U_CadProduto.pas">
+            <Form>FrmCadProd</Form>
+        </DCCReference>
+        <DCCReference Include="..\Cadastros\U_CadCondicoes.pas">
+            <Form>FrmCadCondicoes</Form>
+        </DCCReference>
+        <DCCReference Include="..\Objetos\UObjetoBUS.pas">
+            <Form>FrmObjetoBUS</Form>
+        </DCCReference>
+        <DCCReference Include="..\Buscas\U_BusCidade.pas">
+            <Form>FrmBusCid</Form>
+        </DCCReference>
+        <DCCReference Include="..\Buscas\U_BusCargo.pas">
+            <Form>FrmBusCargos</Form>
+        </DCCReference>
+        <DCCReference Include="..\Buscas\U_BusCep.pas">
+            <Form>FrmBusCep</Form>
+        </DCCReference>
+        <DCCReference Include="..\Buscas\U_BusCondicao.pas">
+            <Form>FrmBusCon</Form>
+        </DCCReference>
+        <DCCReference Include="..\Buscas\U_BusBairro.pas">
+            <Form>FrmBusBairros</Form>
+        </DCCReference>
+        <DCCReference Include="..\Cadastros\U_CadManuntencao.pas">
+            <Form>FrmCadManun</Form>
+        </DCCReference>
+        <DCCReference Include="..\Cadastros\U_CadMateriaPrima.pas">
+            <Form>FrmCadMatPr</Form>
+        </DCCReference>
+        <DCCReference Include="..\Cadastros\U_CadMaquina.pas">
+            <Form>FrmCadMaquinas</Form>
+        </DCCReference>
+        <DCCReference Include="..\Buscas\U_BusMaquina.pas">
+            <Form>FrmBusMaq</Form>
+        </DCCReference>
+        <DCCReference Include="..\Buscas\U_BusManuntencao.pas">
+            <Form>FrmBusManun</Form>
+        </DCCReference>
+        <DCCReference Include="..\Buscas\U_BusFornecedor.pas">
+            <Form>FrmBusForn</Form>
+        </DCCReference>
+        <DCCReference Include="..\Buscas\U_BusFuncionario.pas">
+            <Form>FrmBusFun</Form>
+        </DCCReference>
+        <DCCReference Include="..\Buscas\U_BusMateriaPrima.pas">
+            <Form>FrmBusMatPr</Form>
+        </DCCReference>
+        <DCCReference Include="..\Buscas\U_BusProduto.pas">
+            <Form>FrmBusProd</Form>
+        </DCCReference>
+        <DCCReference Include="..\Buscas\U_BusCliente.pas">
+            <Form>FrmBusClien</Form>
+        </DCCReference>
+        <DCCReference Include="..\Objetos\UObjetoSTAT.pas">
+            <Form>FrmObjetoSTA</Form>
+        </DCCReference>
+        <DCCReference Include="..\Status\U_StatusCidade.pas">
+            <Form>FrmStatusCid</Form>
+        </DCCReference>
+        <DCCReference Include="..\Status\U_StatusBairro.pas">
+            <Form>FrmStatusBai</Form>
+        </DCCReference>
+        <DCCReference Include="..\Status\U_StatusCep.pas">
+            <Form>FrmStatusCep</Form>
+        </DCCReference>
+        <DCCReference Include="..\Status\U_StatusCond.pas">
+            <Form>FrmStatusCond</Form>
+        </DCCReference>
+        <DCCReference Include="..\Status\U_StatusForn.pas">
+            <Form>FrmStatusForn</Form>
+        </DCCReference>
+        <DCCReference Include="..\Status\U_StatusFun.pas">
+            <Form>FrmStatusFun</Form>
+        </DCCReference>
+        <DCCReference Include="..\Status\U_StatusClien.pas">
+            <Form>FrmStatusClien</Form>
+        </DCCReference>
+        <DCCReference Include="..\Status\U_StatusCarg.pas">
+            <Form>FrmStatusCar</Form>
+        </DCCReference>
+        <DCCReference Include="..\Status\U_StatusManu.pas">
+            <Form>FrmStatusManun</Form>
+        </DCCReference>
+        <DCCReference Include="..\Status\U_StatusMaq.pas">
+            <Form>FrmStatusMaq</Form>
+        </DCCReference>
+        <DCCReference Include="..\Status\U_StatusMatPr.pas">
+            <Form>FrmStatusMatPr</Form>
+        </DCCReference>
+        <DCCReference Include="..\Status\U_StatusProd.pas">
+            <Form>FrmStatusProd</Form>
+        </DCCReference>
+        <DCCReference Include="..\Login\U_Login.pas">
+            <Form>FrmLogin</Form>
+        </DCCReference>
+        <DCCReference Include="..\Cadastros\U_CadGrupo.pas">
+            <Form>FrmCadGrup</Form>
+        </DCCReference>
+        <DCCReference Include="..\Buscas\U_BusGrupos.pas">
+            <Form>FrmBusGrup</Form>
+        </DCCReference>
+        <DCCReference Include="..\Status\U_StatusGrup.pas">
+            <Form>FrmStatusGrup</Form>
+        </DCCReference>
+        <DCCReference Include="..\Cadastros\U_CadTipoLog.pas">
+            <Form>FrmCadTipoLog</Form>
+        </DCCReference>
+        <DCCReference Include="..\Buscas\U_BusTipoLog.pas">
+            <Form>FrmBusTipoLog</Form>
+        </DCCReference>
+        <DCCReference Include="..\Status\U_StatusTipoLog.pas">
+            <Form>FrmStatusTipoLog</Form>
+        </DCCReference>
+        <DCCReference Include="..\Vendas\U_Venda.pas">
+            <Form>FrmVenda</Form>
+        </DCCReference>
+        <DCCReference Include="..\Objetos\UObjetoLIST.pas">
+            <Form>FrmObjetoLISTA</Form>
+        </DCCReference>
+        <DCCReference Include="..\Listagens\U_ListagemVendas.pas">
+            <Form>FrmListVendas</Form>
+        </DCCReference>
+        <DCCReference Include="..\Splash\U_Splash.pas">
+            <Form>FrmSplash</Form>
+        </DCCReference>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">SOFTMETAL.dpr</Source>
+                </Source>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1046</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

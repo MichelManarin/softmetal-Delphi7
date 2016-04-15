@@ -1,0 +1,840 @@
+inherited FrmCadFun: TFrmCadFun
+  Left = 1
+  Top = 1
+  Caption = 'SOFTMETA - Cadastro de Funcionarios'
+  ClientHeight = 520
+  ClientWidth = 782
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited PANBOTOES: TPanel
+    Top = 463
+    Width = 782
+    inherited BtnNovo: TRzButton
+      Top = 8
+      Height = 23
+    end
+    inherited BtnBuscar: TRzButton
+      OnClick = BtnBuscarClick
+    end
+    inherited BtnStatus: TRzButton
+      OnClick = BtnStatusClick
+    end
+  end
+  inherited PANTITULO: TRzPanel
+    Width = 782
+    Caption = 'Cadastro de Funcionarios'
+  end
+  inherited PANDADOS: TRzPanel
+    Width = 782
+    Height = 422
+    inherited LBLCOD: TRzLabel
+      Width = 51
+      Height = 16
+      Font.Height = -13
+    end
+    object Label3: TLabel
+      Left = 103
+      Top = 24
+      Width = 43
+      Height = 16
+      Caption = 'NOME*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label13: TLabel
+      Left = 512
+      Top = 24
+      Width = 31
+      Height = 16
+      Caption = 'CPF*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label14: TLabel
+      Left = 664
+      Top = 24
+      Width = 24
+      Height = 16
+      Caption = 'RG*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label15: TLabel
+      Left = 664
+      Top = 120
+      Width = 139
+      Height = 16
+      Caption = 'CART. DE TRABALHO*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label16: TLabel
+      Left = 376
+      Top = 72
+      Width = 103
+      Height = 16
+      Caption = 'DATA DE NASC.*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label17: TLabel
+      Left = 16
+      Top = 264
+      Width = 101
+      Height = 16
+      Caption = 'COMPLEMENTO'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label18: TLabel
+      Left = 16
+      Top = 216
+      Width = 39
+      Height = 16
+      Caption = 'EMAIL'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label19: TLabel
+      Left = 512
+      Top = 72
+      Width = 40
+      Height = 16
+      Caption = 'FONE*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label20: TLabel
+      Left = 664
+      Top = 72
+      Width = 112
+      Height = 16
+      Caption = 'FONE OPCIONAL*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label21: TLabel
+      Left = 16
+      Top = 168
+      Width = 91
+      Height = 16
+      Caption = 'OBSERVA'#199#195'O'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+    end
+    object RzLabel1: TRzLabel
+      Left = 16
+      Top = 72
+      Width = 62
+      Height = 16
+      Caption = 'COD. CEP'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ParentShowHint = False
+      ShowAccelChar = False
+      ShowHint = False
+      LightTextStyle = True
+      HighlightColor = clBtnText
+    end
+    object Label24: TLabel
+      Left = 312
+      Top = 72
+      Width = 41
+      Height = 16
+      Caption = 'SEXO*'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label25: TLabel
+      Left = 16
+      Top = 317
+      Width = 258
+      Height = 17
+      Caption = 'Adicione um cargo para o funcion'#225'rio !!!'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clInactiveCaptionText
+      Font.Height = -15
+      Font.Name = 'Arial'
+      Font.Style = [fsItalic]
+      ParentFont = False
+    end
+    object Label1: TLabel
+      Left = 384
+      Top = 315
+      Width = 200
+      Height = 16
+      Caption = 'Item preenchido manualmente.'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 592
+      Top = 315
+      Width = 223
+      Height = 16
+      Caption = 'Item preenchido automaticamente.'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clHotLight
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object DBNOMEFU: TRzDBEdit
+      Left = 103
+      Top = 40
+      Width = 393
+      Height = 24
+      DataSource = DSFUN
+      DataField = 'NOME_FUN'
+      CharCase = ecUpperCase
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      FrameHotTrack = True
+      FrameVisible = True
+      ParentFont = False
+      TabOrder = 0
+    end
+    object DBCPFFUN: TRzDBEdit
+      Left = 512
+      Top = 40
+      Width = 145
+      Height = 24
+      DataSource = DSFUN
+      DataField = 'CPF_FUN'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      FrameHotTrack = True
+      FrameVisible = True
+      ParentFont = False
+      TabOrder = 1
+    end
+    object DBRGFUN: TRzDBEdit
+      Left = 664
+      Top = 40
+      Width = 145
+      Height = 24
+      DataSource = DSFUN
+      DataField = 'RG_FUN'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      FrameHotTrack = True
+      FrameVisible = True
+      ParentFont = False
+      TabOrder = 2
+    end
+    object DBCARTFUN: TRzDBEdit
+      Left = 664
+      Top = 136
+      Width = 145
+      Height = 24
+      DataSource = DSFUN
+      DataField = 'CART_FUN'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      FrameHotTrack = True
+      FrameVisible = True
+      ParentFont = False
+      TabOrder = 3
+    end
+    object DBDATANASC: TRzDBDateTimeEdit
+      Left = 376
+      Top = 88
+      Width = 121
+      Height = 24
+      DataSource = DSFUN
+      DataField = 'DTANASC_FUN'
+      CharCase = ecUpperCase
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      FrameHotTrack = True
+      FrameVisible = True
+      ParentFont = False
+      TabOrder = 4
+      EditType = etDate
+    end
+    object DBCOMPLFUN: TRzDBEdit
+      Left = 16
+      Top = 280
+      Width = 793
+      Height = 24
+      DataSource = DSFUN
+      DataField = 'COMP_FUN'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      FrameHotTrack = True
+      FrameVisible = True
+      ParentFont = False
+      TabOrder = 5
+    end
+    object DBEMAILLL: TRzDBEdit
+      Left = 16
+      Top = 232
+      Width = 793
+      Height = 24
+      DataSource = DSFUN
+      DataField = 'EMAIL_FUN'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      FrameHotTrack = True
+      FrameVisible = True
+      ParentFont = False
+      TabOrder = 6
+    end
+    object DBFONE: TRzDBEdit
+      Left = 512
+      Top = 88
+      Width = 145
+      Height = 24
+      DataSource = DSFUN
+      DataField = 'FONE1_FUN'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      FrameHotTrack = True
+      FrameVisible = True
+      ParentFont = False
+      TabOrder = 7
+    end
+    object DBFONEOPC: TRzDBEdit
+      Left = 664
+      Top = 88
+      Width = 145
+      Height = 24
+      DataSource = DSFUN
+      DataField = 'FONE2_FUN'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      FrameHotTrack = True
+      FrameVisible = True
+      ParentFont = False
+      TabOrder = 8
+    end
+    object DBOBSER: TRzDBEdit
+      Left = 16
+      Top = 184
+      Width = 793
+      Height = 24
+      DataSource = DSFUN
+      DataField = 'OBS_FUN'
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      FrameHotTrack = True
+      FrameVisible = True
+      ParentFont = False
+      TabOrder = 9
+    end
+    object DBIDCEP: TRzDBEdit
+      Left = 16
+      Top = 88
+      Width = 73
+      Height = 24
+      DataSource = DSFUN
+      DataField = 'IDCEP_CEP'
+      Alignment = taRightJustify
+      CharCase = ecUpperCase
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      FrameHotTrack = True
+      FrameVisible = True
+      ParentFont = False
+      TabOrder = 10
+    end
+    object GridCargos: TRzDBGrid
+      Left = 2
+      Top = 242
+      Width = 778
+      Height = 178
+      Hint = '<F1> Incluir Cargo <F2> Desativar Cargo'
+      Align = alBottom
+      DataSource = DSCARGOS
+      DefaultDrawing = True
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 11
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Arial'
+      TitleFont.Style = []
+      OnEnter = GridCargosEnter
+      OnKeyDown = GridCargosKeyDown
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'ID_CARFUN'
+          Title.Caption = 'C'#243'd. Cargo Fun.'
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clHotLight
+          Title.Font.Height = -13
+          Title.Font.Name = 'Arial'
+          Title.Font.Style = [fsBold]
+          Width = 110
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'IDFUNCIONARIO'
+          Title.Caption = 'C'#243'd. Funcion'#225'rio'
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clHotLight
+          Title.Font.Height = -13
+          Title.Font.Name = 'Arial'
+          Title.Font.Style = [fsBold]
+          Width = 120
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'DTADM_FUN'
+          Title.Caption = 'Data de Adm.'
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clHotLight
+          Title.Font.Height = -13
+          Title.Font.Name = 'Arial'
+          Title.Font.Style = [fsBold]
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'DTDEMI_FUN'
+          Title.Caption = 'Data de Dem.'
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clHotLight
+          Title.Font.Height = -13
+          Title.Font.Name = 'Arial'
+          Title.Font.Style = [fsBold]
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'IDCARGO'
+          Title.Caption = 'C'#243'd. Cargo'
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clCaptionText
+          Title.Font.Height = -13
+          Title.Font.Name = 'Arial'
+          Title.Font.Style = [fsBold]
+          Width = 100
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'NOME_CARGO'
+          Title.Caption = 'Cargo'
+          Title.Font.Charset = DEFAULT_CHARSET
+          Title.Font.Color = clWindowText
+          Title.Font.Height = -13
+          Title.Font.Name = 'Arial'
+          Title.Font.Style = [fsBold]
+          Width = 292
+          Visible = True
+        end>
+    end
+    object DBSEXOFUN: TRzDBComboBox
+      Left = 312
+      Top = 88
+      Width = 49
+      Height = 24
+      DataField = 'SEXO_FUN'
+      DataSource = DSFUN
+      Style = csDropDownList
+      CharCase = ecUpperCase
+      Ctl3D = False
+      Enabled = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      FrameHotTrack = True
+      FrameVisible = True
+      ItemHeight = 16
+      ParentCtl3D = False
+      ParentFont = False
+      TabOrder = 12
+      Items.Strings = (
+        'F'
+        'M')
+      Values.Strings = (
+        'F'
+        'M')
+    end
+  end
+  inherited EdtBusca: TRzEdit
+    Width = 73
+    OnKeyDown = EdtBuscaKeyDown
+  end
+  inherited BARRASTATUS: TStatusBar
+    Top = 501
+    Width = 782
+  end
+  inherited tempo: TTimer
+    Left = 160
+    Top = 8
+  end
+  object DSFUN: TDataSource
+    DataSet = CDSFUN
+    Left = 112
+    Top = 8
+  end
+  object CDSFUN: TClientDataSet
+    Active = True
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'PROVIDER'
+    Left = 80
+    Top = 8
+    object CDSFUNIDFUNCIONARIO: TIntegerField
+      FieldName = 'IDFUNCIONARIO'
+      Required = True
+    end
+    object CDSFUNNOME_FUN: TStringField
+      FieldName = 'NOME_FUN'
+      Required = True
+      Size = 60
+    end
+    object CDSFUNCPF_FUN: TStringField
+      FieldName = 'CPF_FUN'
+      Required = True
+      Size = 11
+    end
+    object CDSFUNRG_FUN: TStringField
+      FieldName = 'RG_FUN'
+      Size = 11
+    end
+    object CDSFUNCART_FUN: TStringField
+      FieldName = 'CART_FUN'
+    end
+    object CDSFUNDTANASC_FUN: TDateField
+      FieldName = 'DTANASC_FUN'
+      Required = True
+    end
+    object CDSFUNCOMP_FUN: TStringField
+      FieldName = 'COMP_FUN'
+      Size = 100
+    end
+    object CDSFUNEMAIL_FUN: TStringField
+      FieldName = 'EMAIL_FUN'
+      Size = 100
+    end
+    object CDSFUNSEXO_FUN: TStringField
+      FieldName = 'SEXO_FUN'
+      Required = True
+      FixedChar = True
+      Size = 1
+    end
+    object CDSFUNFONE1_FUN: TStringField
+      FieldName = 'FONE1_FUN'
+      Size = 11
+    end
+    object CDSFUNFONE2_FUN: TStringField
+      FieldName = 'FONE2_FUN'
+      Size = 11
+    end
+    object CDSFUNOBS_FUN: TStringField
+      FieldName = 'OBS_FUN'
+      Size = 100
+    end
+    object CDSFUNSTATUS_FUN: TStringField
+      FieldName = 'STATUS_FUN'
+      Size = 1
+    end
+    object CDSFUNIDCEP_CEP: TIntegerField
+      FieldName = 'IDCEP_CEP'
+      Required = True
+    end
+    object CDSFUNCEP_CEP: TStringField
+      FieldName = 'CEP_CEP'
+      Size = 8
+    end
+    object CDSFUNSQLCARGOS: TDataSetField
+      FieldName = 'SQLCARGOS'
+    end
+  end
+  object PROVIDER: TDataSetProvider
+    DataSet = SQLFUN
+    Left = 48
+    Top = 8
+  end
+  object SQLFUN: TSQLDataSet
+    CommandText = 
+      'SELECT'#13#10#13#10'FUNCIONARIOS.IDFUNCIONARIO,'#13#10'FUNCIONARIOS.NOME_FUN,'#13#10'F' +
+      'UNCIONARIOS.CPF_FUN,'#13#10'FUNCIONARIOS.RG_FUN,'#13#10'FUNCIONARIOS.CART_FU' +
+      'N,'#13#10'FUNCIONARIOS.DTANASC_FUN,'#13#10'FUNCIONARIOS.COMP_FUN,'#13#10'FUNCIONAR' +
+      'IOS.EMAIL_FUN,'#13#10'FUNCIONARIOS.SEXO_FUN,'#13#10'FUNCIONARIOS.FONE1_FUN,'#13 +
+      #10'FUNCIONARIOS.FONE2_FUN,'#13#10'FUNCIONARIOS.OBS_FUN,'#13#10'FUNCIONARIOS.ST' +
+      'ATUS_FUN,'#13#10'FUNCIONARIOS.IDCEP_CEP,'#13#10#13#10'CEPS.CEP_CEP'#13#10#13#10'FROM FUNCI' +
+      'ONARIOS'#13#10#13#10#13#10'LEFT OUTER JOIN CEPS ON (CEPS.IDCEP_CEP = FUNCIONAR' +
+      'IOS.IDCEP_CEP )'#13#10#13#10'WHERE FUNCIONARIOS.IDFUNCIONARIO =   :PARFUN'#13 +
+      #10
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftString
+        Name = 'PARFUN'
+        ParamType = ptInput
+        Value = '0'
+      end>
+    SQLConnection = DM.conexao
+    Left = 16
+    Top = 8
+    object SQLFUNIDFUNCIONARIO: TIntegerField
+      FieldName = 'IDFUNCIONARIO'
+      Required = True
+    end
+    object SQLFUNNOME_FUN: TStringField
+      FieldName = 'NOME_FUN'
+      Required = True
+      Size = 60
+    end
+    object SQLFUNCPF_FUN: TStringField
+      FieldName = 'CPF_FUN'
+      Required = True
+      Size = 11
+    end
+    object SQLFUNRG_FUN: TStringField
+      FieldName = 'RG_FUN'
+      Size = 11
+    end
+    object SQLFUNCART_FUN: TStringField
+      FieldName = 'CART_FUN'
+    end
+    object SQLFUNDTANASC_FUN: TDateField
+      FieldName = 'DTANASC_FUN'
+      Required = True
+    end
+    object SQLFUNCOMP_FUN: TStringField
+      FieldName = 'COMP_FUN'
+      Size = 100
+    end
+    object SQLFUNEMAIL_FUN: TStringField
+      FieldName = 'EMAIL_FUN'
+      Size = 100
+    end
+    object SQLFUNSEXO_FUN: TStringField
+      FieldName = 'SEXO_FUN'
+      Required = True
+      FixedChar = True
+      Size = 1
+    end
+    object SQLFUNFONE1_FUN: TStringField
+      FieldName = 'FONE1_FUN'
+      Size = 11
+    end
+    object SQLFUNFONE2_FUN: TStringField
+      FieldName = 'FONE2_FUN'
+      Size = 11
+    end
+    object SQLFUNOBS_FUN: TStringField
+      FieldName = 'OBS_FUN'
+      Size = 100
+    end
+    object SQLFUNSTATUS_FUN: TStringField
+      FieldName = 'STATUS_FUN'
+      Size = 1
+    end
+    object SQLFUNIDCEP_CEP: TIntegerField
+      FieldName = 'IDCEP_CEP'
+      Required = True
+    end
+    object SQLFUNCEP_CEP: TStringField
+      FieldName = 'CEP_CEP'
+      Size = 8
+    end
+  end
+  object DSLIGA: TDataSource
+    DataSet = SQLFUN
+    Left = 16
+    Top = 352
+  end
+  object SQLCARGOS: TSQLDataSet
+    CommandText = 
+      'SELECT'#13#10#13#10'CARGOS_FUN.ID_CARFUN,'#13#10'CARGOS_FUN.IDCARGO,'#13#10'CARGOS_FUN' +
+      '.IDFUNCIONARIO,'#13#10'CARGOS_FUN.DTADM_FUN,'#13#10'CARGOS_FUN.DTDEMI_FUN,'#13#10 +
+      'CARGOS_FUN.STATUS,'#13#10'CARGOS.NOME_CARGO'#13#10#13#10'FROM CARGOS_FUN'#13#10#13#10'LEFT' +
+      ' OUTER JOIN CARGOS ON (CARGOS.IDCARGO = CARGOS_FUN.IDCARGO)'#13#10'LEF' +
+      'T OUTER JOIN FUNCIONARIOS ON (FUNCIONARIOS.IDFUNCIONARIO = CARGO' +
+      'S_FUN.IDFUNCIONARIO)'#13#10#13#10#13#10'WHERE CARGOS_FUN.IDFUNCIONARIO = :IDFU' +
+      'NCIONARIO'#13#10#13#10#13#10'ORDER BY CARGOS_FUN.STATUS'#13#10#13#10
+    DataSource = DSLIGA
+    MaxBlobSize = -1
+    Params = <
+      item
+        DataType = ftString
+        Name = 'IDFUNCIONARIO'
+        ParamType = ptInput
+        Value = '0'
+      end>
+    SQLConnection = DM.conexao
+    Left = 56
+    Top = 352
+    object SQLCARGOSID_CARFUN: TIntegerField
+      FieldName = 'ID_CARFUN'
+      Required = True
+    end
+    object SQLCARGOSIDCARGO: TIntegerField
+      FieldName = 'IDCARGO'
+    end
+    object SQLCARGOSIDFUNCIONARIO: TIntegerField
+      FieldName = 'IDFUNCIONARIO'
+      Required = True
+    end
+    object SQLCARGOSDTADM_FUN: TDateField
+      FieldName = 'DTADM_FUN'
+    end
+    object SQLCARGOSDTDEMI_FUN: TDateField
+      FieldName = 'DTDEMI_FUN'
+    end
+    object SQLCARGOSSTATUS: TStringField
+      FieldName = 'STATUS'
+      Required = True
+      Size = 1
+    end
+    object SQLCARGOSNOME_CARGO: TStringField
+      FieldName = 'NOME_CARGO'
+      Size = 30
+    end
+  end
+  object CDSCARGOS: TClientDataSet
+    Active = True
+    Aggregates = <>
+    DataSetField = CDSFUNSQLCARGOS
+    Params = <>
+    Left = 88
+    Top = 352
+    object CDSCARGOSID_CARFUN: TIntegerField
+      FieldName = 'ID_CARFUN'
+      Required = True
+    end
+    object CDSCARGOSIDCARGO: TIntegerField
+      FieldName = 'IDCARGO'
+    end
+    object CDSCARGOSIDFUNCIONARIO: TIntegerField
+      FieldName = 'IDFUNCIONARIO'
+      Required = True
+    end
+    object CDSCARGOSDTADM_FUN: TDateField
+      FieldName = 'DTADM_FUN'
+    end
+    object CDSCARGOSDTDEMI_FUN: TDateField
+      FieldName = 'DTDEMI_FUN'
+    end
+    object CDSCARGOSSTATUS: TStringField
+      FieldName = 'STATUS'
+      Required = True
+      Size = 1
+    end
+    object CDSCARGOSNOME_CARGO: TStringField
+      FieldName = 'NOME_CARGO'
+      Size = 30
+    end
+  end
+  object DSCARGOS: TDataSource
+    DataSet = CDSCARGOS
+    Left = 120
+    Top = 352
+  end
+end
